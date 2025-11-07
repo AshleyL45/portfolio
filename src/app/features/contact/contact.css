@@ -1,0 +1,6 @@
+section {
+  scroll-snap-align: start;
+}
+form {
+  width: 100%;
+}

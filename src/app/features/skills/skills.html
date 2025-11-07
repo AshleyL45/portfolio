@@ -1,0 +1,20 @@
+<section
+  id="skills"
+  class="bg-gradient-to-b from-black to-[#12071c] py-14 text-center"
+>
+  <h2 class="text-2xl font-semibold text-white mb-8">
+    Skills & Technologies
+  </h2>
+
+  <div
+    class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4 px-4"
+  >
+    @for (skill of skills(); track skill) {
+      <div
+        class="px-6 py-3 bg-[#181121] text-white/80 rounded-md border border-white/5 text-sm hover:bg-[#2a1a3a] transition-colors"
+      >
+        {{ skill }}
+      </div>
+    }
+  </div>
+</section>
