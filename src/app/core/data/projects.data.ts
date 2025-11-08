@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Eshop',
     description: 'Site e-commerce de plantes.',
-    image: 'https://s.tmimgcdn.com/scr/800x500/301800/pentosh-theme-shopify-pour-magasin-de-jardinage-et-de-plantes_301857-original.jpg',
+    image: 'assets/projects/eshop.png',
     githubUrl: 'https://github.com/AshleyL45/front---odyssea',
     projectUrl: 'https://ecommerce.example.com',
     technologies: ['Angular', 'TypeScript', 'Spring Boot', 'MySQL', 'VPS (OVH)'],
@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Portfolio',
     description: 'Portfolio de mes différents projets.',
-    image: 'https://astro.build/_image?href=https%3A%2F%2Fstorage.googleapis.com%2Fdev-portal-bucket%2Fportfolio.webp&w=1600&h=900&f=webp&dpl=690d329a6c618b0008040d17',
+    image: 'assets/projects/portfolio.png',
     githubUrl: 'https://github.com/AshleyL45/portfolio',
     projectUrl: 'https://aichat.example.com',
     technologies: ['Angular', 'TypeScript', 'Spring Boot', 'MySQL', 'VPS (OVH)'],
