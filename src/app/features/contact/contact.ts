@@ -4,14 +4,13 @@ import { Component, signal } from '@angular/core';
   selector: 'app-contact',
   standalone: true,
   templateUrl: './contact.html',
-  styleUrl: './contact.css',
+  styleUrls: ['./contact.css'],
 })
 export class Contact {
   name = signal('');
   email = signal('');
   message = signal('');
 
-  // ✅ on cast proprement ici
   updateName(event: Event) {
     const target = event.target as HTMLInputElement | null;
     this.name.set(target?.value ?? '');
@@ -27,11 +26,16 @@ export class Contact {
     this.message.set(target?.value ?? '');
   }
 
-  submit() {
-    console.log('Form submitted:', {
-      name: this.name(),
+  submit(event: Event) {
+    event.preventDefault();
+
+    console.log('Formulaire envoyé (simulation) :', {
+      nom: this.name(),
       email: this.email(),
       message: this.message(),
     });
+
+    alert('Merci ! Votre message a été envoyé.');
+
   }
 }
