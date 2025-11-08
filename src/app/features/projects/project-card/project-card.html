@@ -14,6 +14,11 @@
     style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 90%);"
   ></div>
 
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 30%);"
+  ></div>
+
   <div class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-5">
     <nav aria-label="Project links">
       <ul class="flex gap-3 flex-wrap">
@@ -29,15 +34,21 @@
         </li>
 
         @if (project().githubUrl) {
-          <li><a [href]="project().githubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub</a></li>
+          <li>
+            <a [href]="project().githubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub</a>
+          </li>
         }
 
         @if (project().frontGithubUrl) {
-          <li><a [href]="project().frontGithubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub Front</a></li>
+          <li>
+            <a [href]="project().frontGithubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub Front</a>
+          </li>
         }
 
         @if (project().backGithubUrl) {
-          <li><a [href]="project().backGithubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub Back</a></li>
+          <li>
+            <a [href]="project().backGithubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub Back</a>
+          </li>
         }
       </ul>
     </nav>
