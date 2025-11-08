@@ -8,4 +8,16 @@ li:focus-visible {
   border-radius: 6px;
 }
 
+#skills .section-title {
+  position: static;
+  transform: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+  margin-bottom: 60px;
+  text-align: center;
+}
 

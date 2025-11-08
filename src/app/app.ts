@@ -3,6 +3,7 @@ import { Hero } from './features/hero/hero';
 import { Skills } from './features/skills/skills';
 import { Contact } from './features/contact/contact';
 import {ProjectList} from './features/projects/projectList/project-list';
+import {Experience} from './features/experience/experience';
 import {Header} from './shared/components/header/header';
 import {Footer} from './shared/components/footer/footer';
 
@@ -14,8 +15,8 @@ import {Footer} from './shared/components/footer/footer';
     ProjectList,
     Skills,
     Contact,
-    Footer,
     Header,
+    Experience,
     Footer,
   ],
   templateUrl: './app.html',
