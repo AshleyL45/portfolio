@@ -78,9 +78,9 @@
   }
 }
 
-.content p {
-  color: #ccc;
-  font-size: 1.1rem;
+.content {
+  padding: 0 1.5rem; /* 24px de marge de chaque côté */
+  text-align: center;
 }
 
 .arrow {
@@ -115,4 +115,10 @@ body, html {
   padding: 0;
   overflow-x: hidden;
   background: #000;
+}
+
+@media (min-width: 640px) {
+  .content {
+    padding: 0 3rem;
+  }
 }
