@@ -4,6 +4,7 @@ import { Skills } from './features/skills/skills';
 import { Contact } from './features/contact/contact';
 import { Footer } from './features/footer/footer';
 import {ProjectList} from './features/projects/projectList/project-list';
+import {Header} from './shared/components/header/header';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import {ProjectList} from './features/projects/projectList/project-list';
     Skills,
     Contact,
     Footer,
+    Header,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
