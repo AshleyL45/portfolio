@@ -1,6 +1,14 @@
 section {
   scroll-snap-align: start;
 }
+
 form {
   width: 100%;
+  max-width: 28rem;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+  transition: box-shadow 0.2s ease;
 }
