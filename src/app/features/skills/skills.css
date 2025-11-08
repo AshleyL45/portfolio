@@ -1,3 +1,11 @@
 section {
   scroll-snap-align: start;
 }
+
+li:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+

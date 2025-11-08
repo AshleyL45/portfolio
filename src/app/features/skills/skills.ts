@@ -8,13 +8,15 @@ import { Component, signal } from '@angular/core';
 })
 export class Skills {
   skills = signal([
+    'Angular',
     'React',
-    'Next.js',
     'TypeScript',
     'Node.js',
     'TailwindCSS',
-    'GraphQL',
+    'MySQL',
+    'SpringBoot',
     'Python',
-    'AWS',
+    'Docker',
+    'VPS (OVH)'
   ]);
 }
