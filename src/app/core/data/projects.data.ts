@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Odyssea',
     description: 'Site de réservation de voyages personnalisés hauts de gamme.',
-    image: 'https://images-wixmp-530a50041672c69d335ba4cf.wixmp.com/templates/image/af39374c417ef2301e5d2ca0735e43d5fb713c78abbd14cb28ca8fd82051959f1661956639772.jpg',
+    image: 'assets/projects/odyssea.png',
     frontGithubUrl: 'https://github.com/AshleyL45/portfolio',
     backGithubUrl: 'https://github.com/AshleyL45/back---odyssea',
     projectUrl: 'https://ecommerce.example.com',

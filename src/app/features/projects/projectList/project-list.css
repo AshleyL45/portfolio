@@ -1,0 +1,11 @@
+#projects .section-title {
+  position: static;
+  transform: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+  margin-bottom: 60px;
+}
