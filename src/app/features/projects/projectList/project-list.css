@@ -1,14 +1,4 @@
-section {
-  scroll-snap-align: start;
-}
-
-li:focus-visible {
-  outline: 2px solid #8b5cf6;
-  outline-offset: 2px;
-  border-radius: 6px;
-}
-
-#skills .section-title {
+#projects .section-title {
   position: static;
   transform: none;
   font-size: 1.7rem;
@@ -18,6 +8,4 @@ li:focus-visible {
   letter-spacing: 1px;
   font-family: inherit;
   margin-bottom: 60px;
-  text-align: center;
 }
-

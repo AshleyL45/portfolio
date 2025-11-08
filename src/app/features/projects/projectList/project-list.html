@@ -1,0 +1,20 @@
+<section id="projects" class="relative bg-black py-32">
+  <header class="mb-10 text-center">
+    <h2 class="section-title">Mes projets</h2>
+  </header>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4 items-stretch">
+    @for (project of projects(); track project.title) {
+      <app-project-card [project]="project" />
+    }
+
+    @if (projects().length % 2 !== 0) {
+      <div class="relative w-full rounded-xl border border-white/10 h-[380px] flex items-center justify-center backdrop-blur-md bg-white/5">
+        <div class="text-center text-white/80">
+          <p class="text-lg font-semibold">À venir...</p>
+          <p class="text-sm mt-1 text-white/50">Nouveau projet en préparation</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

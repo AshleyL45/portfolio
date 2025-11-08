@@ -1,0 +1,73 @@
+<article
+  class="relative w-full box-border overflow-hidden rounded-xl border border-white/5 shadow-lg hover:scale-[1.01] transition-transform h-[380px]"
+  role="listitem"
+  aria-label="Project: {{ project().title }}"
+>
+  <img
+    [src]="project().image"
+    [alt]="'Screenshot of project ' + project().title"
+    class="absolute inset-0 w-full h-full object-cover brightness-[0.85]"
+  />
+
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 90%);"
+  ></div>
+
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 30%);"
+  ></div>
+
+  <div class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-5">
+    <nav aria-label="Project links">
+      <ul class="flex gap-3 flex-wrap">
+        <li>
+          <a
+            [href]="project().projectUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs bg-white/10 text-white px-3 py-1 rounded-full border border-white/10 hover:bg-white/20"
+          >
+            Voir projet
+          </a>
+        </li>
+
+        @if (project().githubUrl) {
+          <li>
+            <a [href]="project().githubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub</a>
+          </li>
+        }
+
+        @if (project().frontGithubUrl) {
+          <li>
+            <a [href]="project().frontGithubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub Front</a>
+          </li>
+        }
+
+        @if (project().backGithubUrl) {
+          <li>
+            <a [href]="project().backGithubUrl" target="_blank" class="text-xs bg-white/10 px-3 py-1 rounded-full">GitHub Back</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <time class="text-white/85 text-base">📅 {{ project().date }}</time>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 p-7 flex flex-col gap-2 z-10">
+    <h3 class="text-white text-lg font-semibold">{{ project().title }}</h3>
+    <p class="text-white/75 text-sm mb-2">{{ project().description }}</p>
+
+    <ul class="flex flex-wrap gap-2">
+      @for (tech of project().technologies; track tech) {
+        <li>
+          <span class="bg-white/10 text-white/90 px-2 py-[0.2rem] text-[0.7rem] rounded-full border border-white/10">
+            {{ tech }}
+          </span>
+        </li>
+      }
+    </ul>
+  </div>
+</article>

@@ -1,6 +1,27 @@
 section {
   scroll-snap-align: start;
 }
+
 form {
   width: 100%;
+  max-width: 28rem;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+  transition: box-shadow 0.2s ease;
+}
+
+#contact .section-title {
+  position: static;
+  transform: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: inherit;
+  text-align: center;
+  margin-bottom: 60px;
 }
