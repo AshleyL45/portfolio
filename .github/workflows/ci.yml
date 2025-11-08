@@ -1,4 +1,4 @@
-name: CI Pipeline for DogePortfolio (Angular)
+name: CI Pipeline for Portfolio (Angular)
 
 on:
   push:
