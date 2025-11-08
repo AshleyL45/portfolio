@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+
+article {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+article > div.bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 60%);
+}
+
+article .top-bar {
+  padding-top: 1.25rem; /* = p-5 */
+  padding-bottom: 0.5rem;
+}
+
+article a {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+article a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #0b0b0d;
+  transform: translateY(-1px);
+}
