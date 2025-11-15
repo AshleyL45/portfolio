@@ -43,6 +43,7 @@
 }
 
 .hero {
+  position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -50,16 +51,42 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
-  position: relative;
+  color: #fff;
+  background: #05050a;
+  overflow: hidden;
+}
 
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background: #05050a;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 1200px;
+  transform: translate(-50%, -55%);
   background: radial-gradient(
-    circle at center,
-    rgba(40, 45, 70, 0.6) 0%,
-    rgba(15, 15, 30, 0.95) 40%,
-    rgba(5, 5, 10, 1) 80%,
-    #000 100%
+    circle,
+    rgba(96, 148, 234, 0.25) 0%,
+    rgba(76, 124, 202, 0.17) 25%,
+    rgba(40, 60, 100, 0.10) 45%,
+    rgba(10, 15, 25, 0.05) 55%,
+    rgba(5, 5, 10, 0) 75%
   );
+  pointer-events: none;
 }
 
 .content h1 {
@@ -79,7 +106,7 @@
 }
 
 .content {
-  padding: 0 1.5rem; /* 24px de marge de chaque côté */
+  padding: 0 1.5rem;
   text-align: center;
 }
 
@@ -97,6 +124,25 @@
   transform: rotate(45deg);
   animation: arrow-bounce 1.8s infinite ease-in-out;
 }
+
+.hero button {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+  margin-top: 5rem;
+}
+
+.hero button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+
 
 @keyframes arrow-bounce {
   0%, 20%, 50%, 80%, 100% {

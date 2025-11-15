@@ -9,3 +9,17 @@
   font-family: inherit;
   margin-bottom: 60px;
 }
+
+#projects {
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    #05050A 0%,
+    #040408 15%,
+    #020204 35%,
+    #000000 55%
+  );
+  color: #fff;
+  z-index: 1;
+}
+
