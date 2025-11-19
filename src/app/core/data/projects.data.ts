@@ -2,7 +2,7 @@ import { Project } from '../models/project';
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Eshop',
+    title: 'Eshop (En cours)',
     description: 'Site e-commerce de plantes.',
     image: 'assets/projects/eshop.png',
     githubUrl: 'https://github.com/AshleyL45/e-shop',
@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
     image: 'assets/projects/portfolio.png',
     githubUrl: 'https://github.com/AshleyL45/portfolio',
     projectUrl: 'https://ashleylabory.fr/',
-    technologies: ['Angular', 'TypeScript', 'Spring Boot', 'MySQL', 'VPS (OVH)'],
+    technologies: ['Angular', 'TypeScript', 'TailwindCSS', 'VPS (OVH)'],
     date: '2025'
   },
   {
@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     image: 'assets/projects/odyssea.png',
     frontGithubUrl: 'https://github.com/AshleyL45/portfolio',
     backGithubUrl: 'https://github.com/AshleyL45/back---odyssea',
-    technologies: ['React', 'Node.js', 'TypeScript', 'Spring Boot', 'MySQL'],
+    technologies: ['React', 'TypeScript',  'Java', 'Spring Boot', 'MySQL'],
     date: '2024'
   }
 ];

@@ -1,4 +1,4 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, fakeAsync, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Contact } from '@app/features/contact/contact';
 
@@ -42,9 +42,12 @@ describe('Contact (intégration)', () => {
     expect(component.message()).toBe('Message de test');
   });
 
-  it('devrait soumettre le formulaire et appeler alert', () => {
+  it('devrait soumettre le formulaire, réinitialiser les champs et afficher "Message envoyé !"', fakeAsync(async () => {
+    const fetchSpy = spyOn(window, 'fetch').and.returnValue(
+      Promise.resolve({ ok: true } as Response)
+    );
+
     const alertSpy = spyOn(window, 'alert');
-    const consoleSpy = spyOn(console, 'log');
 
     component.name.set('Ashley');
     component.email.set('ashley@example.com');
@@ -54,9 +57,19 @@ describe('Contact (intégration)', () => {
     const form = fixture.debugElement.query(By.css('form')).nativeElement as HTMLFormElement;
     form.dispatchEvent(new Event('submit'));
 
+    tick();
     fixture.detectChanges();
 
-    expect(alertSpy).toHaveBeenCalledWith('Merci ! Votre message a été envoyé.');
-    expect(consoleSpy).toHaveBeenCalled();
-  });
+    expect(fetchSpy).toHaveBeenCalled();
+
+    expect(component.name()).toBe('');
+    expect(component.email()).toBe('');
+    expect(component.message()).toBe('');
+    expect(component.success()).toBeTrue();
+
+    const successMessage = fixture.debugElement.query(By.css('p.text-green-400'));
+    expect(successMessage).not.toBeNull();
+    expect(successMessage.nativeElement.textContent.trim()).toBe('Message envoyé !');
+    expect(alertSpy).not.toHaveBeenCalled();
+  }));
 });

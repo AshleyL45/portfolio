@@ -14,56 +14,56 @@ describe('Contact (unitaire)', () => {
   });
 
   it('updateName devrait mettre à jour le signal name', () => {
-    const event = {
-      target: { value: 'Ashley' }
-    } as unknown as Event;
-
+    const event = { target: { value: 'Ashley' } } as any;
     component.updateName(event);
-
     expect(component.name()).toBe('Ashley');
   });
 
   it('updateEmail devrait mettre à jour le signal email', () => {
-    const event = {
-      target: { value: 'ashley@example.com' }
-    } as unknown as Event;
-
+    const event = { target: { value: 'ashley@example.com' } } as any;
     component.updateEmail(event);
-
     expect(component.email()).toBe('ashley@example.com');
   });
 
   it('updateMessage devrait mettre à jour le signal message', () => {
-    const event = {
-      target: { value: 'Hello!' }
-    } as unknown as Event;
-
+    const event = { target: { value: 'Hello!' } } as any;
     component.updateMessage(event);
-
     expect(component.message()).toBe('Hello!');
   });
 
-  it('submit devrait appeler console.log et alert avec les bonnes données', () => {
-    const consoleSpy = spyOn(console, 'log');
+  it('submit (cas succès) devrait appeler fetch, activer success et vider les champs', async () => {
+    // mock du fetch qui retourne OK
+    const fetchSpy = spyOn(window, 'fetch').and.resolveTo({
+      ok: true
+    } as Response);
+
     const alertSpy = spyOn(window, 'alert');
 
-    // on prépare des données
     component.name.set('Ashley');
     component.email.set('ashley@example.com');
     component.message.set('Coucou le formulaire');
 
-    // on simule un submit
-    const fakeEvent = {
-      preventDefault: () => {}
-    } as Event;
+    const fakeEvent = { preventDefault: () => {} } as Event;
 
-    component.submit(fakeEvent);
+    await component.submit(fakeEvent);
 
-    expect(consoleSpy).toHaveBeenCalledWith('Formulaire envoyé (simulation) :', {
-      nom: 'Ashley',
-      email: 'ashley@example.com',
-      message: 'Coucou le formulaire'
-    });
-    expect(alertSpy).toHaveBeenCalledWith('Merci ! Votre message a été envoyé.');
+    expect(fetchSpy).toHaveBeenCalledWith(
+      'https://formspree.io/f/mnnwjgzr',
+      jasmine.objectContaining({
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Ashley',
+          email: 'ashley@example.com',
+          message: 'Coucou le formulaire'
+        })
+      })
+    );
+
+    expect(component.success()).toBeTrue();
+    expect(component.name()).toBe('');
+    expect(component.email()).toBe('');
+    expect(component.message()).toBe('');
+    expect(alertSpy).not.toHaveBeenCalled();
   });
 });
