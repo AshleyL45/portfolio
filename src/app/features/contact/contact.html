@@ -59,8 +59,13 @@
     <button
       type="submit"
       class="w-full max-w-xl bg-gradient-to-r from-[#2e8cff] to-[#7c3aed] text-white font-semibold py-3 rounded-lg text-sm md:text-base hover:opacity-90 transition"
+      [disabled]="isSending()"
     >
-      Envoyer le message
+      {{ isSending() ? "Envoi…" : "Envoyer le message" }}
     </button>
+
+    @if (success()) {
+      <p class="text-green-400 text-sm mt-3">Message envoyé !</p>
+    }
   </form>
 </section>
