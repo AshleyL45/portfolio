@@ -1,19 +1,27 @@
-<section
-  id="skills"
-  class="bg-gradient-to-b from-black to-[#12071c]  py-2 md:py-24 text-center relative z-10"
->
-  <h2 class="section-title">Technologies</h2>
+<section class="skills-section">
+  <h2 id="section-skills-title" class="section-title">Compétences</h2>
 
-  <ul
-    class="max-w-6xl mx-auto flex flex-wrap justify-center gap-4 px-8 mb-24"
-    role="list"
-  >
-    @for (skill of skills(); track skill) {
-      <li
-        class="flex items-center justify-center px-6 py-3 bg-[#181121] text-white/80 rounded-md border border-white/5 text-sm hover:bg-[#2a1a3a] transition-colors flex-grow basis-[calc(50%-1rem)] sm:basis-[calc(33.333%-1rem)] md:basis-[calc(25%-1rem)] lg:basis-[calc(20%-1rem)]"
-      >
-        {{ skill }}
-      </li>
+  <div class="skills-wrapper">
+    @for (category of categories; track category.title) {
+      <div class="skill-card">
+        <h3 class="skill-card-title">
+          {{ category.title }}
+          <span class="title-underline"></span>
+        </h3>
+
+        <ul class="skill-items">
+          @for (item of category.items; track item) {
+
+            @if (item === '__SEPARATOR__') {
+              <li class="skill-separator"></li>
+            } @else {
+              <li>{{ item }}</li>
+            }
+
+          }
+        </ul>
+
+      </div>
     }
-  </ul>
+  </div>
 </section>

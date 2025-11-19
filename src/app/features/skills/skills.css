@@ -1,23 +1,93 @@
-section {
-  scroll-snap-align: start;
+.skills-section {
+  background: linear-gradient(to bottom, #000000, #12071c);
+  color: #fff;
+  position: relative;
+  padding: 5rem 1.5rem 5rem;
+  padding-top: 90px;
 }
 
-li:focus-visible {
-  outline: 2px solid #8b5cf6;
-  outline-offset: 2px;
-  border-radius: 6px;
+.skills-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem 2.5rem;
 }
 
-#skills .section-title {
+.section-title {
   position: static;
   transform: none;
+  margin: 0 auto 3rem;
   font-size: 1.7rem;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: inherit;
-  margin-bottom: 60px;
   text-align: center;
 }
 
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  padding: 2rem 1.7rem 1.6rem;
+  transition: all 0.28s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.30);
+}
+
+.skill-card-title {
+  position: relative;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  color: rgba(255, 255, 255, 0.92);
+  padding-bottom: 0.6rem;
+}
+
+.title-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 68px;
+  height: 2px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(120, 139, 255, 0.85),
+    rgba(120, 139, 255, 0.2)
+  );
+  box-shadow: 0 0 8px rgba(120, 139, 255, 0.4);
+}
+
+.skill-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-items li {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 0.35rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.skill-items li:last-child {
+  margin-bottom: 0;
+}
+
+.skill-separator {
+  margin: 0.9rem 0 1rem;
+  height: 1px;
+  width: 60%;
+  border-radius: 2px;
+  background: rgba(160, 170, 200, 0.12);
+}

@@ -18,6 +18,8 @@ import {Footer} from './shared/components/footer/footer';
     Header,
     Experience,
     Footer,
+    Skills,
+    Skills,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
