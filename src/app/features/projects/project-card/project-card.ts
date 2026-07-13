@@ -8,4 +8,14 @@ import { Project } from '../../../core/models/project';
 })
 export class ProjectCard {
   project = input.required<Project>();
+
+  openProject(): void {
+    const projectUrl = this.project().projectUrl;
+
+    if (!projectUrl) {
+      return;
+    }
+
+    window.open(projectUrl, '_blank', 'noopener,noreferrer');
+  }
 }
